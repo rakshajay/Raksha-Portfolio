@@ -1,0 +1,1328 @@
+
+body {cursor: url("images/Layer 6 -resized.png"), auto;}
+
+
+/*---------STICKY HEADER-----------*/
+
+
+
+
+.sticky-header {
+    z-index: 1999;
+    display: flex;
+    align-items: center;
+    position: fixed;
+    top: -1%;
+    left: 0;
+    right: 0;
+    justify-content: space-between; /* Add this for spacing */
+}
+
+.sticky-header .logo {
+    /* Adjust for centering without position absolute */
+    margin: 4px; /* Center logo */
+    width: 280px;
+    color: var(--white);
+    padding: 32px 48px;
+}
+
+.sticky-header .contact-link a {
+    margin-left: auto; /* Push to the right */
+    color: var(--white);
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    padding: 16px 48px;
+    font-size: .8125rem;
+    font-weight: 700;
+    line-height: 1.3em;
+    text-decoration: none;
+}
+
+/* Optional: Style for hover effect on the link */
+.sticky-header .contact-link a:hover {
+    color: #d3d3d3;
+}
+
+
+
+
+
+/*--------------------*/
+
+
+img {
+  width: 60%;
+  height: 60%;
+  object-fit: cover;
+}
+
+.gear {
+    position: absolute;
+    width: 100px;  
+    height: 100px;
+    transition: opacity 0.3s ease;
+    animation: spin 4s linear infinite;
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/*------------- INTRO PAGE RECTANGLES---------------- */ 
+
+.empty {
+    position: relative;
+    width: 100%;  
+    height: 3%; 
+    z-index: 6;   
+}
+
+
+.background-rec {
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%; /* Stretch across the entire container */
+  height: 100%; /* Stretch across the entire container */
+  z-index: -1; /* Position it behind other content */  
+}
+
+img.backimage {
+ width: 100%; /* Stretch the image to cover the .background-rec div */
+  height: 100%; /* Stretch the image to cover the .background-rec div */
+  object-fit: fill;
+  opacity: .4;
+}
+
+/*.............LAYERS OF INTRO IMAGES-ME..........*/
+
+.intro-container {
+  position: relative;
+  width: 100vw;
+  height: 90vh;
+  border-bottom: 1px solid #f5f5f5;
+  overflow: hidden;
+}
+
+
+.intro-image-me{
+    position: absolute;
+    height: 340px;
+    z-index: 2;
+    width: 14vw;
+    top: 26vh;
+    left: 36vw;
+}
+
+.MyImage {
+    position: absolute;
+    width: 100%;  
+    height: 100%;
+    border: 1px solid rgba(255,255,255,.12);
+    box-shadow: -2px 2px 4px rgba(0,0,0,.1), -1px 1px 6px rgba(0,0,0,.1), -3px 3px 6px rgba(0,0,0,.1);
+    
+}
+
+.resume-overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0; /* Initially hidden */
+    transition: opacity 1.20s ease, transform 1.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: black; /* Text color */
+    text-transform: uppercase;
+    font-size: .8125rem;
+    font-weight: 700;
+text-decoration: none;
+}
+
+/* Initial position for text */
+#line1 {
+    transform: translateY(-20px);
+    transition: transform .80s ease; /* Smooth transition for moving */
+}
+
+#line2 {
+    transform: translateY(20px);
+    transition: transform .80s ease; /* Smooth transition for moving */
+}
+
+.Back-rectangle {
+ position: absolute;
+ background-color: white;
+ border: 1px solid lightgrey;
+ z-index: -1;
+ width: 100%;  
+ height: 100%;    
+  
+}
+
+/* Text hover animations */
+.intro-image-me:hover .resume-overlay {
+    opacity: 1; /* Show the text */
+    transition: opacity 1.6s ease;
+}
+
+.intro-image-me:hover #line1 {
+    transform: translateY(-120px); /* Move line 1 up */
+}
+
+.intro-image-me:hover #line2 {
+    transform: translateY(120px); /* Move line 2 down */
+}
+
+
+
+.intro-image-me:hover .MyImage {
+    opacity: 0; /* Hide the image */
+    transition: background .8s ease;
+}
+
+
+.intro-image-me:hover + .background-flash-me {
+    opacity: 1;
+    transition-delay: 0s; /* Reset the delay for visibility when showing */
+}
+
+.background-flash-me {
+  position: absolute;
+    display: block; /* Changed from 'none' to 'block' */
+    opacity: 0;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    transition: visibility 0s linear 0.8s, opacity 0.8s linear; /* Adjusted transition */
+}
+
+.Info-opener{
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+}
+
+
+/*.............LAYERS OF PORTIONS - AR..........*/
+
+
+
+.ARImage {
+    position: absolute;
+    width: 100%;  
+    height: 100%;
+    border: 1px solid rgba(255,255,255,.12);
+    box-shadow: -2px 2px 4px rgba(0,0,0,.1), -1px 1px 6px rgba(0,0,0,.1), -3px 3px 6px rgba(0,0,0,.1);
+    
+}
+
+.intro-image-AR{
+    position: absolute;
+    width: 11vw;  
+    height: 330px;
+    top: 19vh;   
+    left: 3vw;
+    z-index: 2;
+    
+    }
+
+.intro-image-AR {
+    cursor: pointer;
+}
+/* Text hover animations */
+.intro-image-AR:hover .resume-overlay {
+    opacity: 1; /* Show the text */
+    transition: opacity 1.6s ease;
+}
+
+.intro-image-AR:hover #line1 {
+    transform: translateY(-100px); /* Move line 1 up */
+}
+
+.intro-image-AR:hover #line2 {
+    transform: translateY(100px); /* Move line 2 down */
+}
+
+
+
+.intro-image-AR:hover .ARImage {
+    opacity: 0; /* Hide the image */
+    transition: background .8s ease;
+}
+
+
+.intro-image-AR:hover + .background-flash-AR {
+    opacity: 1;
+    transition-delay: 0s; /* Reset the delay for visibility when showing */
+}
+
+.background-flash-AR{
+   width: 100vw;  
+  height: 100vh;
+    display: block; /* Changed from 'none' to 'block' */
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    transition: visibility 0s linear 0.8s, opacity 0.8s linear; /* Adjusted transition */
+}
+
+.checkImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+/*.............LAYERS OF PORTIONS - ARCHI..........*/
+
+
+
+
+.archiImage {
+    position: absolute;
+    width: 100%;  
+    height: 100%;
+    border: 1px solid rgba(255,255,255,.12);
+    box-shadow: -2px 2px 4px rgba(0,0,0,.1), -1px 1px 6px rgba(0,0,0,.1), -3px 3px 6px rgba(0,0,0,.1);
+    
+}
+
+.intro-image-archi{
+    position: absolute;
+    width: 14.5vw; 
+    height:400px;
+    top: 6vh;    
+    left: 22vw;
+    z-index: 1;
+}
+
+.intro-image-archi {
+    cursor: pointer;
+}
+/* Text hover animations */
+.intro-image-archi:hover .resume-overlay {
+    opacity: 1; /* Show the text */
+    transition: opacity 1.6s ease;
+}
+
+.intro-image-archi:hover #line1 {
+    transform: translateY(-100px); /* Move line 1 up */
+}
+
+.intro-image-archi:hover #line2 {
+    transform: translateY(100px); /* Move line 2 down */
+}
+
+
+
+.intro-image-archi:hover .archiImage {
+    opacity: 0; /* Hide the image */
+    transition: background .8s ease;
+}
+
+
+.intro-image-archi:hover + .background-flash-archi {
+    opacity: 1;
+    transition-delay: 0s; /* Reset the delay for visibility when showing */
+}
+
+.background-flash-archi{
+  
+   display: block; /* Changed from 'none' to 'block' */
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    transition: visibility 0s linear 0.8s, opacity 0.8s linear; /* Adjusted transition */
+}
+
+
+/*.............LAYERS OF PORTIONS - WEB DESIGN..........*/
+
+.webImage {
+    position: absolute;
+    width: 100%;  
+    height: 100%;
+    border: 1px solid rgba(255,255,255,.12);
+    box-shadow: -2px 2px 4px rgba(0,0,0,.1), -1px 1px 6px rgba(0,0,0,.1), -3px 3px 6px rgba(0,0,0,.1);
+    
+}
+
+.intro-image-web{
+    position: absolute;
+    z-index: 1;
+    width: 18.5vw;
+    top: 26vw;
+    left: 15vw;
+    height: 250px;
+}
+
+.intro-image-web {
+    cursor: pointer;
+}
+/* Text hover animations */
+.intro-image-web:hover .resume-overlay {
+    opacity: 1; /* Show the text */
+    transition: opacity 1.6s ease;
+}
+
+.intro-image-web:hover #line1 {
+    transform: translateY(-100px); /* Move line 1 up */
+}
+
+.intro-image-web:hover #line2 {
+    transform: translateY(100px); /* Move line 2 down */
+}
+
+
+
+.intro-image-web:hover .webImage {
+    opacity: 0; /* Hide the image */
+    transition: background .8s ease;
+}
+
+
+.intro-image-web:hover + .background-flash-web {
+    opacity: 1;
+    transition-delay: 0s; /* Reset the delay for visibility when showing */
+}
+
+
+.background-flash-web{
+  
+   display: block; /* Changed from 'none' to 'block' */
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    transition: visibility 0s linear 0.8s, opacity 0.8s linear; /* Adjusted transition */
+}
+/*.............LAYERS OF PORTIONS - ART WORKS..........*/
+
+.AWImage {
+    position: absolute;
+    width: 100%;  
+    height: 100%;
+    border: 1px solid rgba(255,255,255,.12);
+    box-shadow: -2px 2px 4px rgba(0,0,0,.1), -1px 1px 6px rgba(0,0,0,.1), -3px 3px 6px rgba(0,0,0,.1);
+    
+}
+
+
+.intro-image-AW{
+    position: absolute;
+    height: 280px;
+    z-index: 1;
+    width: 25vw;
+    top: 50vh;
+    left: auto;
+    right: 19vw;
+}
+
+.intro-image-AW {
+    cursor: pointer;
+}
+/* Text hover animations */
+.intro-image-AW:hover .resume-overlay {
+    opacity: 1; /* Show the text */
+    transition: opacity 1.6s ease;
+}
+
+.intro-image-AW:hover #line1 {
+    transform: translateY(-100px); /* Move line 1 up */
+}
+
+.intro-image-AW:hover #line2 {
+    transform: translateY(100px); /* Move line 2 down */
+}
+
+
+
+.intro-image-AW:hover .AWImage {
+    opacity: 0; /* Hide the image */
+    transition: background .8s ease;
+}
+
+
+.intro-image-AW:hover + .background-flash-AW {
+    opacity: 1;
+    transition-delay: 0s; /* Reset the delay for visibility when showing */
+
+
+}
+
+.background-flash-AW{
+  
+   display: block; /* Changed from 'none' to 'block' */
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    transition: visibility 0s linear 0.8s, opacity 0.8s linear; /* Adjusted transition */
+}
+
+/*.............LAYERS OF PORTIONS - TEXT..........*/
+
+
+.intro-image-text{
+   
+  align-items: center;
+  justify-content: center;
+    background-color: #ef9d27;
+    position: absolute;
+    width: 17vw;
+    top: 4vh;
+    left: 48vw;
+    height: 460px;
+    z-index: 1;
+    right: 15vw;
+    border: 1px solid rgba(255,255,255,.12);
+    box-shadow: -2px 2px 4px rgba(0,0,0,.1), -1px 1px 6px rgba(0,0,0,.1), -3px 3px 6px rgba(0,0,0,.1);
+}
+
+.intro-image-text p {
+  font-family: 'Josefin Slab', serif;
+  margin: 40px;
+  color: #3b362e; /* Assuming you want the text color to be white */
+  text-align: center; /* If you want the text to be centered */
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+.intro-image-text em{
+  color: #fff0da;
+  font-style: italic;
+  font-size: 1.2rem;
+}
+
+.all-caps{
+  font-style: italic;
+  color: #fff0da;
+  font-size: 1rem;
+
+}
+/*.............LAYERS OF PORTIONS - COOKING..........*/
+
+.cookImage {
+    position: absolute;
+    width: 100%;  
+    height: 100%;
+    border: 1px solid rgba(255,255,255,.12);
+    box-shadow: -2px 2px 4px rgba(0,0,0,.1), -1px 1px 6px rgba(0,0,0,.1), -3px 3px 6px rgba(0,0,0,.1);
+    
+}
+
+
+.intro-image-cook{
+    position: absolute;
+    width: 16.5vw;
+    top: 7vh;
+    left: auto;
+    right: 96px;
+    height: 250px;
+    z-index: 1;
+   
+}
+
+.intro-image-cook {
+    cursor: pointer;
+}
+/* Text hover animations */
+.intro-image-cook:hover .resume-overlay {
+    opacity: 1; /* Show the text */
+    transition: opacity 1.6s ease;
+}
+
+.intro-image-cook:hover #line1 {
+    transform: translateY(-100px); /* Move line 1 up */
+}
+
+.intro-image-cook:hover #line2 {
+    transform: translateY(100px); /* Move line 2 down */
+}
+
+
+
+.intro-image-cook:hover .cookImage {
+    opacity: 0; /* Hide the image */
+    transition: background .8s ease;
+}
+
+
+.intro-image-cook:hover + .background-flash-cook {
+    opacity: 1;
+    transition-delay: 0s; /* Reset the delay for visibility when showing */
+
+
+}
+
+.background-flash-cook{
+  
+   display: block; /* Changed from 'none' to 'block' */
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    transition: visibility 0s linear 0.8s, opacity 0.8s linear; /* Adjusted transition */
+}
+/*.............LAYERS OF PORTIONS - AI..........*/
+
+.AIImage {
+    position: absolute;
+    width: 100%;  
+    height: 100%;
+    border: 1px solid rgba(255,255,255,.12);
+    box-shadow: -2px 2px 4px rgba(0,0,0,.1), -1px 1px 6px rgba(0,0,0,.1), -3px 3px 6px rgba(0,0,0,.1);
+    
+}
+
+
+
+.intro-image-AI{
+    position: absolute;
+    top: 10.5vh;
+    left: auto;
+    right: 21vw;
+    width: 12.5vw;
+    height: 350px;
+    z-index: 1;
+    
+   
+}
+
+
+.intro-image-AI {
+    cursor: pointer;
+}
+/* Text hover animations */
+.intro-image-AI:hover .resume-overlay {
+    opacity: 1; /* Show the text */
+    transition: opacity 1.6s ease;
+}
+
+.intro-image-AI:hover #line1 {
+    transform: translateY(-100px); /* Move line 1 up */
+}
+
+.intro-image-AI:hover #line2 {
+    transform: translateY(100px); /* Move line 2 down */
+}
+
+
+
+.intro-image-AI:hover .AIImage {
+    opacity: 0; /* Hide the image */
+    transition: background .8s ease;
+}
+
+
+.intro-image-AI:hover + .background-flash-web {
+    opacity: 1;
+    transition-delay: 0s; /* Reset the delay for visibility when showing */
+
+
+}
+
+.background-flash-AI{
+  
+   display: block; /* Changed from 'none' to 'block' */
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    transition: visibility 0s linear 0.8s, opacity 0.8s linear; /* Adjusted transition */
+}
+
+
+/*.............LAYERS OF PORTIONS - GAME DESIGN..........*/
+
+    
+.intro-image-game{
+   
+  align-items: center;
+  justify-content: center;
+    background-color: #1e1a17;
+    position: absolute;
+    width: 11vw;
+    top: 30vh;
+    left: auto;
+    height: 350px;
+    z-index: 1;
+    right: 7vw;
+    border: 1px solid rgba(255,255,255,.12);
+    box-shadow: -2px 2px 4px rgba(0,0,0,.1), -1px 1px 6px rgba(0,0,0,.1), -3px 3px 6px rgba(0,0,0,.1);
+}
+
+.intro-image-game p {
+  font-family: 'Josefin Slab', serif;
+  margin: 40px;
+  color: #5b5674; /* Assuming you want the text color to be white */
+  text-align: center; /* If you want the text to be centered */
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+.intro-image-game em{
+  color: #5b5674;
+  font-style: italic;
+  font-size: 1.2rem;
+}
+
+.all-caps{
+  font-style: italic;
+  color: #fff0da;
+  font-size: 1rem;
+
+}
+/*.............LAYERS OF PORTIONS - COOKING..........*/
+
+.cookImage {
+    position: absolute;
+    width: 100%;  
+    height: 100%;
+    border: 1px solid rgba(255,255,255,.12);
+    box-shadow: -2px 2px 4px rgba(0,0,0,.1), -1px 1px 6px rgba(0,0,0,.1), -3px 3px 6px rgba(0,0,0,.1);
+    
+}
+
+
+.intro-image-cook{
+    position: absolute;
+    width: 16.5vw;
+    top: 7vh;
+    left: auto;
+    right: 96px;
+    height: 250px;
+    z-index: 1;
+   
+}
+
+.intro-image-cook {
+    cursor: pointer;
+}
+/* Text hover animations */
+.intro-image-cook:hover .resume-overlay {
+    opacity: 1; /* Show the text */
+    transition: opacity 1.6s ease;
+}
+
+.intro-image-cook:hover #line1 {
+    transform: translateY(-100px); /* Move line 1 up */
+}
+
+.intro-image-cook:hover #line2 {
+    transform: translateY(100px); /* Move line 2 down */
+}
+
+
+
+.intro-image-cook:hover .cookImage {
+    opacity: 0; /* Hide the image */
+    transition: background .8s ease;
+}
+
+
+.intro-image-cook:hover + .background-flash-cook {
+    opacity: 1;
+    transition-delay: 0s; /* Reset the delay for visibility when showing */
+
+
+}
+
+
+
+
+/*.............LAYERS OF PORTIONS................................................*/
+
+
+
+
+.Full_box {
+
+  border-bottom: 1px solid #f5f5f5;
+
+
+}
+
+.Inner_row {
+
+  background-color: #d5bdaf;
+  border-bottom: 1px solid #f5f5f5;
+  overflow: hidden;
+  position: relative
+}
+
+.Inner_container {
+
+  position: relative
+
+}
+
+.Inner_text {
+  z-index: 2;
+  color: #000000;
+  letter-spacing: -.03em;
+  font-family: 'Josefin Slab', serif;
+  font-size: 8.5vw;
+  font-weight: 300;
+  line-height: 1.2em;
+  display: inline-block;
+  /* Add a right margin to prevent overlapping with the image */
+  
+}
+
+.Project_img {
+  position: absolute;
+  width: 34vw;
+  top: -25%;
+  
+  transform: translateY(90%); /* You can adjust this value based on how much you want to hide initially */
+  transition: transform 0.3s ease; /* Smooth animation */
+  
+}
+
+.archi {
+ border: 1px solid rgba(255,255,255,.12);
+    box-shadow: -2px 2px 4px rgba(0,0,0,.1), -1px 1px 6px rgba(0,0,0,.1), -3px 3px 6px rgba(0,0,0,.1);
+}
+
+
+.Project_img:hover {
+  /* Hover Effect */
+  transform: translateY(0);
+}
+
+.Inner_container:hover .Project_img {
+  transform: translateY(0);
+}
+
+.Tittle_text {
+
+  color:  #606060;
+  font-family: 'Amatic SC', sans-serif;
+  font-size: 2.0vw;
+  font-weight: bold;
+  line-height: 1em;
+  position: absolute;
+  top: -60%;
+  bottom: auto;
+  left: 40px;
+
+}
+
+.Brief_text {
+
+  color:  #707070;
+  font-family: 'Josefin Slab', serif;
+  font-size: .9vw;
+  font-weight: 300;
+  line-height: 1em;
+  position: absolute;
+  top: -35%;
+  bottom: auto;
+  left:10px;
+  max-width: 400px;
+
+}
+
+#brain{
+  width:600px;
+
+}
+
+/*.............LOCATION OF IMAGES..........*/
+
+#Srinam{
+  right: -150px;
+}
+
+#Resort{
+  left: 10px;
+}
+
+#Marvanthe{
+  left: 520px;
+}
+
+#Assetz{
+  right: -150px;
+}
+
+#Revit{
+  left: 60px;
+}
+
+#Deaegu{
+  left: 100px;
+}
+
+#Fashionapp{
+  right: -220px;
+}
+
+#XRinterior{
+  left: 60px;
+  width: 38vw;
+  top: -40%;
+}
+
+
+#BrainAI{
+  right: -320px;
+  width: 48vw;
+  top: -70%;
+}
+
+#AIArchi{
+  left: 100px;
+}
+
+#RoboArchi{
+  left: 520px;
+  top: -50%;
+}
+
+
+#catiaArchi{
+  left: 90px;
+  top: -50%;
+}
+
+/*...............AUGMENTED REALITY.........*/
+
+.Augmented_img {
+  position: absolute;
+  width: 64vw;
+  left: 60%;
+  top: -80%;
+  
+  /* Initial Positioning */
+  transform: translateY(100%); /* You can adjust this value based on how much you want to hide initially */
+  transition: transform 0.8s ease; /* Smooth animation */
+
+}
+
+.Augmented_img:hover {
+  /* Hover Effect */
+  transform: translateY(0);
+}
+
+
+.Inner_container:hover .Augmented_img {
+  transform: translateY(0);
+}
+
+
+.AR_img {
+    position: relative;
+}
+
+
+
+.gif-overlay {
+  position: absolute;
+  top: -55%;
+  left: 6%;
+  width: 40vw;
+  }
+
+.ARTittle_text {
+
+  color:  #606060;
+  font-family: 'Amatic SC', sans-serif;
+  font-size: 2.0vw;
+  font-weight: bold;
+  line-height: 1em;
+  position: absolute;
+  top: -50%;
+  bottom: auto;
+  left: 40px;
+
+}
+
+.ARBrief_text {
+
+  color:  #707070;
+  font-family: 'Josefin Slab', serif;
+  font-size: .9vw;
+  font-weight: 300;
+  line-height: 1em;
+  position: absolute;
+  top: -35%;
+  bottom: auto;
+  left:-12px;
+  max-width: 350px;
+
+}
+
+#ARealitybook{
+  right: -620px;
+}
+
+#Facade{
+  left: 60px;
+ }
+
+.Angry_Sphere{
+   margin-top: -160px;
+  transition: transform .5s ease;
+cursor: url("images/Shoot.png"), auto;
+
+}
+
+
+  
+/*.............LAYERS OF PORTIONS  AUGMENTED REALITY..........*/
+
+.line_2 {
+  padding-top: 0px;
+  border-bottom: 1px solid #f5f5f5;
+  overflow: hidden;
+}
+
+
+.Full_box_2 {
+
+  border-bottom: 1px solid #f5f5f5;
+
+
+}
+
+.Inner_row_2 {
+
+  background-color: #d6ccc2;
+  border-bottom: 1px solid #f5f5f5;
+  overflow: hidden;
+  position: relative
+}
+
+.Inner_container_2 {
+
+  position: relative
+}
+
+
+
+/* ------------- CAROUSEL-ARTWORKS----------*/
+
+
+
+.outer-container {
+    position: relative;
+    width: 100%;
+    height: 140vh; /* Full height */
+     /*url("images/Painting4.jpg");*/
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.artwork-slider {
+    display: flex;
+    position: absolute;
+    left: -1800px; /* Start from the right corner */
+    top: 30%;
+    transform: translateY(-50%);
+    height: 50%; /* Cards take up 50% of the outer div */
+}
+
+.artwork-card {
+
+    margin-left: 20px; /* Space between cards */
+    border: 2px solid white;
+    position: relative;
+    transition: transform 0.3s ease-out;
+    border-radius: 4px;
+    box-shadow: -2px 2px 4px rgba(0,0,0,.1), -1px 1px 6px rgba(0,0,0,.1), -3px 3px 6px rgba(1,1,1,.1);
+
+}
+
+.artwork-card img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.artwork-card:hover::after {
+    content: attr(data-description);
+    position: absolute;
+    bottom: -30px; /* Adjust as needed */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    white-space: nowrap;
+    font-size: 14px;
+    color: #333;
+}
+
+body, html {
+    height: 200%; /* Extend the height to allow for scrolling */
+}
+
+.lightbox {
+    cursor: default;
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.6); /* Black w/ opacity */
+}
+
+.lightbox-content {
+    margin: auto;
+    display: block;
+    width: 75%;
+    max-width: 700px; /* Adjust maximum width as needed */
+}
+
+.close {
+    position: absolute;
+    top: 85px;
+    right: 65px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -50px;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+.prev {
+    left: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.next {
+    right: 0;
+    border-radius: 0 3px 3px 0;
+}
+
+.lightbox-description {
+    color: #fff;
+    text-align: center;
+    padding: 10px 20px;
+    font-size: 1em;
+}
+
+/*.............LAYERS OF PORTIONS  ARTIFICIAL INTELLIGENCE..........*/
+
+.line_3 {
+  padding-top: 0px;
+  border-bottom: 1px solid #f5f5f5;
+  overflow: hidden;
+}
+
+
+.Full_box_3 {
+
+  border-bottom: 1px solid #f5f5f5;
+
+
+}
+
+.Inner_row_3 {
+
+  background-color: #c9ada7;
+  border-bottom: 1px solid #f5f5f5;
+  overflow: hidden;
+  position: relative
+}
+
+.Inner_container_3 {
+
+  position: relative
+}
+
+
+/*.............LAYERS OF PORTIONS  EXTRAS.........*/
+
+
+
+.slider {
+  cursor: pointer;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  position: relative; /* Changed from relative to fixed */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 98vw;
+  height: 100vh;
+
+}
+
+.slides {
+
+  display: none;
+  width: 100%;
+  height: 100%;
+  position: absolute; /* This will make sure slides are on top of each other */
+}
+
+.active {
+  display: block;
+}
+
+.slider img, .slider video {
+object-fit: contain; /* This will make sure the image or video is contained within the element without stretching, adding black bars if necessary */
+  object-position: center;
+  width: 100%;
+  height: 100%;
+   /* This will cover the full screen, preserving the aspect ratio */
+  opacity: 1; /* Set your desired opacity */
+}
+
+.description {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  text-align: center;
+  padding: 5px;
+  color: #000;
+  opacity: 0.7;
+}
+
+.arrow {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  margin-top: -22px;
+  width: 0; 
+  height: 0; 
+  border-style: solid;
+  z-index: 10; /* Make sure arrows are above the slides */
+}
+
+.left-arrow {
+  
+  left: 28px;
+  
+  
+}
+
+.right-arrow {
+  
+  right: 28px;
+  
+}
+
+
+/*.............LAYERS OF PORTIONS  GAMING..........*/
+
+.line_4 {
+  padding-top: 0px;
+  border-bottom: 1px solid #f5f5f5;
+  overflow: hidden;
+  opacity: 0.5;
+}
+
+
+.Full_box_4 {
+
+  border-bottom: 1px solid #f5f5f5;
+opacity: 0.5;
+
+}
+
+.Inner_row_4 {
+
+  background-color: #d9d9d9;
+  border-bottom: 1px solid #f5f5f5;
+  overflow: hidden;
+  position: relative
+}
+
+.Inner_container_4 {
+
+  position: relative
+}
+
+
+.coming_soon{
+  position: relative; /* Needed for absolute positioning of the pseudo-element */
+}
+
+.coming_soon::after {
+  content: ""; /* Pseudo-elements should have the content property set, even if it's empty */
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5); /* Black with 50% opacity */
+  z-index: 2; /* Ensure it's above the content but below anything you might overlay on top */
+}
+
+
+/*.............ADDRESS SCETION..........*/
+
+.contact-section {
+  background-color: #f2f2f2; /* Light grey background */
+  padding: 20px;
+  text-align: center;
+}
+
+.contact-section h3 {
+  margin-bottom: 10px;
+}
+
+.contact-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.contact-section li {
+  margin-bottom: 10px;
+}
+
+.contact-section a {
+  text-decoration: none;
+  color: #333; /* Dark grey text */
+}
+
+.contact-section a:hover {
+  color: #007bff; /* Change color on hover */
+}

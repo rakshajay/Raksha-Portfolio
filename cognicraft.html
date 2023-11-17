@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cogni-Craft application development</title>
+    <link rel="stylesheet" href="cognicraft.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Amatic+SC&display=swap" rel="stylesheet">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Slab:wght@700&family=Roboto:wght@100;300;400&display=swap" rel="stylesheet">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&display=swap" rel="stylesheet">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Exo:wght@200;400&display=swap" rel="stylesheet">
+
+    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.0.6/dist/locomotive-scroll.min.js"></script>
+  </head>
+  <body>
+    <div class="blocks">
+      <div class="block init" data-block-section="1" data-href="home">
+        <div class="block__title">About</div>
+        <div class="block__number">01</div>
+      </div>
+      <div class="block init" data-block-section="2" data-href="collection">
+        <div class="block__title">A pic taken during public exhibition @ SCI-Arc</div>
+        <div class="block__number">02</div>
+      </div>
+      <div class="block init" data-block-section="3" data-href="material">
+        <div class="block__title">App output based on user's bainwaves. </div>
+        <div class="block__number">03</div>
+      </div>
+      <div class="block init" data-block-section="4" data-href="production">
+        <div class="block__title">Project Tech details</div>
+        <div class="block__number">04</div>
+      </div>
+     
+      <div class="block init" data-block-section="5" data-href="journal">
+        <div class="block__title">EEG headset used for app</div>
+        <div class="block__number">05</div>
+      </div>
+       <div class="block init" data-block-section="6" data-href="journal">
+        <div class="block__title">Quick Walk</div>
+        <div class="block__number">06</div>
+      </div>
+    </div>
+
+
+    <main data-scroll-container>
+      <div class="wrap" data-scroll-section> 
+        <section class="section journal" data-block-section="1" id="journal">
+        <div id="Imagesize"> <img src="images/Thesis.jpg" alt="Video of project" class="sideimage" > </div>
+        <div id="aboutproject">
+          <p>"This is an app developed for my Thesis @ SCI-Arc, California. This is a tech where neuroscience and design converge to redefine the shopping experience. Utilizing EEG technology, the project captures customers' brainwaves, translating their cognitive states into a tailored design language. This approach allows the retail environment to dynamically adapt to the collective emotions of its visitors, creating a shared yet personalized journey. Integrating EEG with AI algorithms, the store responds to individual preferences and moods, offering an immersive and customized experience. This app turns retail into more than just a transaction; it's an engaging, personal journey, where each moment is crafted to reflect the customer's inner world"</p> </div> 
+        </section>
+        
+        <section class="section home" data-block-section="2" id="Collection">
+  <img src="images/thesis2.jpg" alt="Video of project">
+</section>
+        <section class="section home" data-block-section="3" id="Material">
+  <img src="images/thesis3.jpg" alt="Video of project">
+</section>
+        <section class="section home" data-block-section="4" id="Home">
+  <img src="images/thesis4.jpg" alt="Video of project">
+</section>
+<section class="section home" data-block-section="5" id="Home">
+  <img src="images/thesis5.png" alt="Video of project">
+</section>
+<section class="section home" data-block-section="6" id="youtube">
+    <iframe width="1280" height="720" 
+            src="https://www.youtube.com/embed/BYLLKY-rS8g" 
+            frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+            allowfullscreen>
+    </iframe>
+</section>
+
+        
+      </div>
+    </main>
+  </body>
+  <script>
+    const scroll = new LocomotiveScroll({
+      el: document.querySelector("[data-scroll-container]"),
+      smooth: true,
+      direction: "horizontal",
+    });
+
+    let blocks = document.querySelectorAll(".block[data-block-section]");
+    scroll.on("scroll", (args) => {
+      blocks.forEach((block) => {
+        let attr = block.getAttribute("data-block-section");
+        let section = document.querySelector(
+          `section[data-block-section='${attr}']`
+        );
+
+        if (section.getBoundingClientRect().left <= block.offsetWidth * attr) {
+          block.classList.add("fixed");
+          block.classList.remove("init");
+          block.classList.remove("active");
+          block.style.left = "";
+        } else if (
+          section.getBoundingClientRect().left >=
+          window.innerWidth - block.offsetWidth * (blocks.length - attr)
+        ) {
+          block.classList.add("init");
+          block.classList.remove("active");
+          block.classList.remove("fixed");
+          block.style.left = "";
+        } else {
+          block.classList.add("active");
+          block.classList.remove("init");
+          block.classList.remove("fixed");
+        }
+
+        if (block.classList.contains("active")) {
+          block.style.left = section.getBoundingClientRect().left + "px";
+        }
+      });
+    });
+  </script>
+</html>

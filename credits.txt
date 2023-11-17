@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Interactive Resume</title>
+  <link rel="stylesheet" href="Resume.css" />
+  <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.0.6/dist/locomotive-scroll.min.js"></script>
+</head>
+<body>
+
+  <main data-scroll-container>
+
+   
+
+
+   <img src="images/Layer 13.1.png" alt="Rotating Image" id="rotatingImage">
+
+
+   <div class="wrap" data-scroll-section>
+
+    <section class="section home" data-block-section="1" >
+    <img src="images/CitySill_01.jpg" alt="image of city silhouette" id="Collection">
+    </section>
+
+    <div><img src="Videos/Parachute1.gif" id="pop-first" alt="image of parchute"></div>
+
+
+    <div><img src="images/villa.png" alt="Plant Image" id="villaImage" class="scroll-triggered-rectangle"> </div>
+    
+    <div><img src="images/retail.png" alt="Plant Image" id="retailImage" class="scroll-triggered-rectangle"> </div>
+    
+
+    <div><img src="images/transit.png" alt="Plant Image" id="transitImage" class="scroll-triggered-rectangle"> </div> 
+    
+    <div><img src="images/metro.png" alt="Plant Image" id="metroImage" class="scroll-triggered-rectangle"> </div> 
+    
+    <div><img src="images/interior.png" alt="Plant Image" id="interiorImage" class="scroll-triggered-rectangle"> </div> 
+
+    <div><img src="images/jurong.png" alt="Plant Image"class="job" id="jurongimage"> </div>
+  
+    <div><img src="images/titan.png" alt="Plant Image" class="jobtitan" id="titanimage"> </div>
+
+
+
+    <section class="section home" data-block-section="2" >
+      <img src="images/CitySill_02.gif" alt="image of city silhouette" id="Collection">
+   </section>
+
+
+    <section class="section home" data-block-section="3" >
+      <img src="images/CitySill_03.gif" alt="image of city silhouette" id="Collection">
+    </section>
+
+
+    <section class="section home" data-block-section="4" >
+      <img src="images/CitySill_04.gif" alt="image of city silhouette" id="Collection">
+      <div><img src="Videos/Parachute2.gif" id="pop-second" alt="image of parchute"></div>
+    </section>
+
+
+    <section class="section home" data-block-section="5" >
+      <img src="images/CitySill_05.gif" alt="image of city silhouette" id="Collection">
+    </section>
+
+
+  </div>
+</main>
+
+
+</body>
+
+
+
+
+
+
+<script>
+  const scroll = new LocomotiveScroll({
+    el: document.querySelector("[data-scroll-container]"),
+    smooth: true,
+    direction: "horizontal",
+  });
+
+
+  let blocks = document.querySelectorAll(".block[data-block-section]");
+  scroll.on("scroll", (args) => {
+   
+
+    blocks.forEach((block) => {
+      let attr = block.getAttribute("data-block-section");
+      let section = document.querySelector(
+        `section[data-block-section='${attr}']`
+        );
+
+      if (section.getBoundingClientRect().left <= block.offsetWidth * attr) {
+        block.classList.add("fixed");
+        block.classList.remove("init");
+        block.classList.remove("active");
+        block.style.left = "";
+      } else if (
+        section.getBoundingClientRect().left >=
+        window.innerWidth - block.offsetWidth * (blocks.length - attr)
+        ) {
+        block.classList.add("init");
+        block.classList.remove("active");
+        block.classList.remove("fixed");
+        block.style.left = "";
+      } else {
+        block.classList.add("active");
+        block.classList.remove("init");
+        block.classList.remove("fixed");
+      }
+
+      if (block.classList.contains("active")) {
+        block.style.left = section.getBoundingClientRect().left + "px";
+      }
+    });
+
+function handleImageVisibility(imageElement, scrollPosition) {
+  let adjustedScrollPosition = scrollPosition;
+
+  // Adjust the scroll position based on screen width
+  if (window.innerWidth > 1200) {
+    adjustedScrollPosition -= 200; // Adjust as needed for large screens
+  } else if (window.innerWidth > 800) {
+    adjustedScrollPosition -= 100; // Adjust as needed for medium screens
+  } // Add more breakpoints as needed
+
+  if (args.scroll.x >= adjustedScrollPosition) {
+    imageElement.style.opacity = '1';
+    imageElement.style.transform = 'translateX(0)';
+  } else {
+    imageElement.style.opacity = '0';
+    imageElement.style.transform = 'translateX(-100%)';
+  }
+}
+ console.log('Screen Width:', window.innerWidth, 'Scroll X:', args.scroll.x);
+// Usage
+scroll.on("scroll", (args) => {
+  const parachuteImage = document.getElementById('pop-first');
+  const parachuteSecond = document.getElementById('pop-second');
+
+  handleImageVisibility(parachuteImage, 1000); // Original scroll position for first image
+  handleImageVisibility(parachuteSecond, 2900); // Original scroll position for second image
+});
+
+
+// IMAGE APPERAING - JURONG//
+
+
+scroll.on("scroll", (args) => {
+    let jurongImage = document.querySelector("#jurongimage");
+    let titanImage = document.querySelector("#titanimage");
+    
+    // Check for different screen widths
+    if (window.innerWidth > 1200) {
+        // For larger screens
+        jurongImage.style.opacity = args.scroll.x > 1800 ? 1 : 0;
+        jurongImage.style.transform = args.scroll.x > 1800 ? 'scale(1)' : 'scale(0.5)';
+        titanImage.style.opacity = args.scroll.x > 2100 ? 1 : 0;
+        titanImage.style.transform = args.scroll.x > 2100 ? 'scale(1)' : 'scale(0.5)';
+    } else if (window.innerWidth > 800) {
+        // For medium screens
+        jurongImage.style.opacity = args.scroll.x > 1200 ? 1 : 0;
+        jurongImage.style.transform = args.scroll.x > 1200 ? 'scale(1)' : 'scale(0.5)';
+        titanImage.style.opacity = args.scroll.x > 1350 ? 1 : 0;
+        titanImage.style.transform = args.scroll.x > 1350 ? 'scale(1)' : 'scale(0.5)';
+    } else {
+        // For smaller screens
+        jurongImage.style.opacity = args.scroll.x > 600 ? 1 : 0;
+        jurongImage.style.transform = args.scroll.x > 600 ? 'scale(1)' : 'scale(0.5)';
+        titanImage.style.opacity = args.scroll.x > 675 ? 1 : 0;
+        titanImage.style.transform = args.scroll.x > 675 ? 'scale(1)' : 'scale(0.5)';
+    }
+});
+
+
+
+
+});
+
+
+        // JavaScript for rotating the GEAR IMAGE
+
+        const rotatingImage = document.getElementById('rotatingImage');
+        let rotation = 0;
+
+        scroll.on('scroll', (args) => {
+
+
+            rotation += 1; // Rotate the image by 10 degrees on each scroll, adjust as needed
+            rotatingImage.style.transform = `translateX(-50%) rotate(${rotation}deg)`;
+          });
+
+        const scrollImage = document.getElementById('scrollImage');
+
+
+
+
+
+
+// IMAGE APPERAING FROM BOTTOM- INTERN//
+
+scroll.on('scroll', (args) => {
+  // Define your specific args.scroll.x values for each image
+  let villaBreakpoints = { large: 1500, medium:1000, small:500};
+  let retailBreakpoints = { large: 1600, medium: 1100, small: 600 };
+  let transitBreakpoints = { large: 1700, medium: 1200, small:700 };
+  let metroBreakpoints = { large: 1800, medium: 1300, small: 800 };
+  let interiorBreakpoints = { large: 1900, medium: 1400, small:900 };
+
+  // Function to handle visibility and animation for each image
+  function handleImageVisibility(imageId, breakpoints) {
+    let image = document.getElementById(imageId);
+    let breakpoint;
+
+    if (window.innerWidth > 1200) {
+      breakpoint = breakpoints.large;
+    } else if (window.innerWidth > 800) {
+      breakpoint = breakpoints.medium;
+    } else {
+      breakpoint = breakpoints.small;
+    }
+
+    if (args.scroll.x > breakpoint) {
+      image.style.opacity = 1;
+      image.style.animation = 'pendulumEffect 2s ease-in-out forwards';
+    } else {
+      image.style.opacity = 0;
+      image.style.animation = 'none';
+    }
+  }
+
+  // Apply the logic to each image
+  handleImageVisibility('villaImage', villaBreakpoints);
+  handleImageVisibility('retailImage', retailBreakpoints);
+  handleImageVisibility('transitImage', transitBreakpoints);
+  handleImageVisibility('metroImage', metroBreakpoints);
+  handleImageVisibility('interiorImage', interiorBreakpoints);
+});
+
+
+
+
+// IMAGE APPERAING FROM BOTTOM- JURONG//
+
+
+</script>
+</html>

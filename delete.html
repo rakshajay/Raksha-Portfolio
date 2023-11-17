@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Model Viewer</title>
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.3.0/model-viewer.min.js"></script>
+    <style>
+      .my_model {
+      width:100vw;
+      height:100vh;
+    }
+    </style>
+</head>
+<body>
+    <model-viewer class="my_model" src="images/12_animated_butterflies.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls poster="poster.webp" shadow-intensity="1">
+    <div class="progress-bar hide" slot="progress-bar">
+        <div class="update-bar"></div>
+    </div>
+    <button slot="ar-button" id="ar-button">
+        View in your space
+    </button>
+    <div id="ar-prompt">
+        <img src="https://modelviewer.dev/shared-assets/icons/hand.png">
+    </div>
+</model-viewer>
+
+</body>
+</html>
+.skill-levels {
+   
+  position: absolute;
+  top: 22vh; /* Match this with your skill-container's top value */
+  left: 86vw; /* Adjust as needed */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: calc(100vh - 22vh);
+  
+  height: 06vh; /* Adjust based on the container's height */
+  z-index: 14; /* Above the skill cards */
+}
+
+.skill-level {
+  position: relative; /* Needed for positioning the :after pseudo-element */
+  text-align: center;
+  font-size: 1.5rem;
+  color: #fff; /* Text color - using white for contrast */
+  padding: 5px 6px; /* Padding inside the skill level boxes */
+  margin-bottom: 32px; /* Adds space between the skill levels */
+}
+
+.skill-level:after {
+  content: ''; /* Needed to generate a box */
+  position: absolute;
+  bottom: -10px; /* Position the line right below the text, adjust as needed */
+  left: -10vh; /* Center the line */
+  transform: translateX(-50%); /* Adjust for centering */
+  width: 200%; /* Length of the line */
+  height: 1px; /* Thickness of the line */
+  background-color: #333; /* Color of the line */
+  z-index: -3; /* Ensure it does not overlap the text */
+}
+
+.skill-level:last-child {
+  margin-bottom: 0; /* No additional space needed after the last item */
+}
+
+.skill-level:last-child:after {
+  content: ''; /* Needed to generate a box */
+  position: absolute;
+  bottom: -20px; /* Position the line below the text, adjust as needed */
+  left: 50%; /* Center the line */
+  transform: translateX(-50%); /* Adjust for centering */
+  width: 100%; /* Length of the line */
+  height: 2px; /* Thickness of the line */
+  background-color: #333; /* Color of the line */
+  z-index: -1; /* Ensure it does not overlap the text */
+}
+.skill-level.expert {
+  background-color: #4CAF50; /* Green */
+}
+
+.skill-level.advanced {
+  background-color: #2196F3; /* Blue */
+}
+
+.skill-level.intermediate {
+  background-color: #FFC107; /* Amber */
+}
+
+.skill-level.elementary {
+  background-color: #FF9800; /* Orange */
+}
+
+.skill-level.beginner {
+  background-color: #f44336; /* Red */
+}
+
+        <div class="skill-levels">
+  <div class="skill-level"><div class="skill-level expert">Expert</div></div>
+  <div class="skill-level"><div class="skill-level advanced">Advanced</div></div>
+  <div class="skill-level"><div class="skill-level intermediate">Intermediate</div></div>
+  <div class="skill-level"><div class="skill-level elementary">Elementary</div></div>
+  <div class="skill-level"><div class="skill-level beginner">Beginner</div></div>
+</div>

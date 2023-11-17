@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AR story book</title>
+    <link rel="stylesheet" href="ARbook.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Amatic+SC&display=swap" rel="stylesheet">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Slab:wght@700&family=Roboto:wght@100;300;400&display=swap" rel="stylesheet">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&display=swap" rel="stylesheet">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Exo:wght@200;400&display=swap" rel="stylesheet">
+
+    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.0.6/dist/locomotive-scroll.min.js"></script>
+  </head>
+  <body>
+    <div class="blocks">
+      <div class="block init" data-block-section="1" data-href="home">
+        <div class="block__title">About</div>
+        <div class="block__number">01</div>
+      </div>
+      <div class="block init" data-block-section="2" data-href="collection">
+        <div class="block__title">Image of AR Animation</div>
+        <div class="block__number">02</div>
+      </div>
+      <div class="block init" data-block-section="3" data-href="material">
+        <div class="block__title">Image of AR Animation 2</div>
+        <div class="block__number">03</div>
+      </div>
+      <div class="block init" data-block-section="4" data-href="production">
+        <div class="block__title">Image of AR Animation 3</div>
+        <div class="block__number">04</div>
+      </div>
+     
+      <div class="block init" data-block-section="5" data-href="journal">
+        <div class="block__title">Image of AR Animation 4</div>
+        <div class="block__number">05</div>
+      </div>
+       <div class="block init" data-block-section="6" data-href="journal">
+        <div class="block__title">Video of AR Animation</div>
+        <div class="block__number">06</div>
+      </div>
+    </div>
+
+
+    <main data-scroll-container>
+      <div class="wrap" data-scroll-section> 
+        <section class="section journal" data-block-section="1" id="journal">
+        <div id="Imagesize"> <img src="images/Rabbit book Cover.jpg" alt="Video of project" class="sideimage" > </div>
+        <div id="aboutproject">
+          <p>"This project transforms Sam McBratney's beloved children's book, 'Guess How Much I Love You,' into an immersive augmented reality experience.This project brings the story's characters to 3D life. Unity-driven, it links physical books with interactive digital content, transforming reading into an immersive, educational experience for children."</p><b> In collab with: Golara Solrani Sedeh, Luise Kaut, Prachi Choudhary,and Yewoinhareg Geberemariam . Advanced Architectural Studies I  poject @ SIA-Arc </b> </div> 
+        </section>
+        
+        <section class="section home" data-block-section="2" id="Collection">
+  <img src="images/ARapp (1).jpg" alt="Video of project">
+</section>
+        <section class="section home" data-block-section="3" id="Material">
+  <img src="images/ARapp (2).jpg" alt="Video of project">
+</section>
+        <section class="section home" data-block-section="4" id="Home">
+  <img src="images/ARapp (3).jpg" alt="Video of project">
+</section>
+<section class="section home" data-block-section="5" id="Home">
+  <img src="images/ARapp (4).jpg" alt="Video of project">
+</section>
+
+<section class="section home" data-block-section="6" id="youtube">
+    <iframe width="1280" height="720"
+     src="https://www.youtube.com/embed/hfeOa998XkY?si=dTbC0BmyJOBlTnV-" 
+      frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+      allowfullscreen>
+        </iframe>
+</section>
+        
+      </div>
+    </main>
+  </body>
+  <script>
+    const scroll = new LocomotiveScroll({
+      el: document.querySelector("[data-scroll-container]"),
+      smooth: true,
+      direction: "horizontal",
+    });
+
+    let blocks = document.querySelectorAll(".block[data-block-section]");
+    scroll.on("scroll", (args) => {
+      blocks.forEach((block) => {
+        let attr = block.getAttribute("data-block-section");
+        let section = document.querySelector(
+          `section[data-block-section='${attr}']`
+        );
+
+        if (section.getBoundingClientRect().left <= block.offsetWidth * attr) {
+          block.classList.add("fixed");
+          block.classList.remove("init");
+          block.classList.remove("active");
+          block.style.left = "";
+        } else if (
+          section.getBoundingClientRect().left >=
+          window.innerWidth - block.offsetWidth * (blocks.length - attr)
+        ) {
+          block.classList.add("init");
+          block.classList.remove("active");
+          block.classList.remove("fixed");
+          block.style.left = "";
+        } else {
+          block.classList.add("active");
+          block.classList.remove("init");
+          block.classList.remove("fixed");
+        }
+
+        if (block.classList.contains("active")) {
+          block.style.left = section.getBoundingClientRect().left + "px";
+        }
+      });
+    });
+  </script>
+</html>

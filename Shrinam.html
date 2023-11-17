@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Freelance Project-Banglore Villa</title>
+    <link rel="stylesheet" href="Shrinam.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Amatic+SC&display=swap" rel="stylesheet">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Slab:wght@700&family=Roboto:wght@100;300;400&display=swap" rel="stylesheet">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&display=swap" rel="stylesheet">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Exo:wght@200;400&display=swap" rel="stylesheet">
+
+    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.0.6/dist/locomotive-scroll.min.js"></script>
+  </head>
+  <body>
+    <div class="blocks">
+      <div class="block init" data-block-section="1" data-href="home">
+        <div class="block__title">About</div>
+        <div class="block__number">01</div>
+      </div>
+      <div class="block init" data-block-section="2" data-href="collection">
+        <div class="block__title">Living</div>
+        <div class="block__number">02</div>
+      </div>
+      <div class="block init" data-block-section="3" data-href="material">
+        <div class="block__title">Landscape and lving</div>
+        <div class="block__number">03</div>
+      </div>
+      <div class="block init" data-block-section="4" data-href="production">
+        <div class="block__title">Site Progress</div>
+        <div class="block__number">04</div>
+      </div>
+     
+      <div class="block init" data-block-section="5" data-href="journal">
+        <div class="block__title">Quick Walk</div>
+        <div class="block__number">05</div>
+      </div>
+    </div>
+    <main data-scroll-container>
+      <div class="wrap" data-scroll-section> 
+        <section class="section journal" data-block-section="1" id="journal">
+        <div id="Imagesize"> <img src="images/Srinam4.png" alt="Video of project" class="sideimage" > </div>
+        <div id="aboutproject">
+          <p>Villa Shrinam in Bangalore, a 2500 sq ft residential project, stands as a testament to urban design harmony. It embodies an ethereal lightness, seamlessly integrating lush green spaces and a tranquil pool. The residence’s    heart - a double-height prayer area - is bathed in natural light from elegant skylights. Living, dining, and kitchen areas gracefully unfold across subtly tiered levels, offering a unique spatial experience. The façade, a symphony of terracotta and concrete, reflects a blend of traditional and modern aesthetics. This conceptually rich structure not only resonateswith its surroundings but also sets a new standard for contemporary urban living.</p> <b> In collab with: Sooru Studios, Banglore.</b></div> 
+        </section>
+        
+        <section class="section home" data-block-section="2" id="Collection">
+  <img src="images/Srinam1.png" alt="Video of project">
+</section>
+        <section class="section home" data-block-section="3" id="Material">
+  <img src="images/Srinam3.png" alt="Video of project">
+</section>
+        <section class="section home" data-block-section="4" id="Production">
+  <div class="image-grid">
+    <img src="images/Srinamsite1.jpeg" alt="Image 1">
+    <img src="images/Srinamsite2.jpeg" alt="Image 2">
+    <img src="images/Srinamsite3.jpeg" alt="Image 3">
+    <img src="images/Srinamsite4.jpeg" alt="Image 4">
+    <img src="images/Srinamsite5.jpeg" alt="Image 5">
+    <!-- More images -->
+  </div>
+</section>
+<section class="section home" data-block-section="5" id="Home">
+    <iframe width="1280" height="720" src="https://www.youtube.com/embed/fLDARYYOa-M?si=h0xAN2IWzuvuMaxb" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</section>
+        
+      </div>
+    </main>
+  </body>
+  <script>
+    const scroll = new LocomotiveScroll({
+      el: document.querySelector("[data-scroll-container]"),
+      smooth: true,
+      direction: "horizontal",
+    });
+
+    let blocks = document.querySelectorAll(".block[data-block-section]");
+    scroll.on("scroll", (args) => {
+      blocks.forEach((block) => {
+        let attr = block.getAttribute("data-block-section");
+        let section = document.querySelector(
+          `section[data-block-section='${attr}']`
+        );
+
+        if (section.getBoundingClientRect().left <= block.offsetWidth * attr) {
+          block.classList.add("fixed");
+          block.classList.remove("init");
+          block.classList.remove("active");
+          block.style.left = "";
+        } else if (
+          section.getBoundingClientRect().left >=
+          window.innerWidth - block.offsetWidth * (blocks.length - attr)
+        ) {
+          block.classList.add("init");
+          block.classList.remove("active");
+          block.classList.remove("fixed");
+          block.style.left = "";
+        } else {
+          block.classList.add("active");
+          block.classList.remove("init");
+          block.classList.remove("fixed");
+        }
+
+        if (block.classList.contains("active")) {
+          block.style.left = section.getBoundingClientRect().left + "px";
+        }
+      });
+    });
+  </script>
+</html>
