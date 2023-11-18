@@ -542,7 +542,9 @@ h1 {
     width: 100%; /* Allow natural width */
     font-size: 0.4rem;
   }
-
+ .icons{
+  opacity:1;
+ }
   .wrap {
     flex-direction: column; /* Stack children vertically */
   }
@@ -576,14 +578,14 @@ h1 {
 }
 
 .coa-badge{
-  
+  opacity: 1;
   left:60%;
   width: 16vw; 
   height: 12vh;
   top:8%;
 }
 
-.banner{ left:60%;top:40%; font-size: .6rem;}
+.banner{ opacity: 1;left:60%;top:40%; font-size: .6rem;}
 .SJ-logo img {width: 10px;}
 #exp1{top:50%;left:12%;}
 #exp2{top:50%;left:32%;}
@@ -599,10 +601,10 @@ h1 {
 #exp12{top:50%;left:10%;}
 
 #transit{top:60%;left:12%;}
-#retail{left:60%;top:-12%;}
-#villa2{left:60%;top:18%;}
-#homestay{left:60%;top:30%;}
-#interior2{left:60%;top:38%;}
+#retail{opacity: 1;left:60%;top:-12%;}
+#villa2{opacity: 1;left:60%;top:18%;}
+#homestay{opacity: 1;left:60%;top:30%;}
+#interior2{opacity: 1;left:60%;top:38%;}
 
 #freelance{
   left: 10%;
@@ -624,8 +626,8 @@ h1 {
    left: 10%;
   top:80%;
 }
-.thesis-concept{left:48%;bottom: 30%;}
-.terra-certi{left:58%;bottom: 5%;}
+.thesis-concept{opacity: 1;left:48%;bottom: 30%;}
+.terra-certi{opacity: 1;left:58%;bottom: 5%;}
 
 .skill-container{
   left: 0;
