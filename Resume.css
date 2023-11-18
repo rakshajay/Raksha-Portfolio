@@ -531,7 +531,7 @@ h1 {
 
 @media only screen and (max-width: 768px) {
   /* Reset styles for smaller screens */
- .blocks, #rotatingImage, .scroll-instruction,.blocks, .block,.block__title, .award-side img, .award-side2 img, .award-side3 img, .award-side4 img  {
+ .blocks, #rotatingImage, .scroll-instruction,.blocks, .block,.block__title, .award-side img, .award-side2 img, .award-side3 img, .award-side4 img   {
         display: none;
     }
 
@@ -632,5 +632,12 @@ h1 {
 .skill-container{
   left: 0;
   top:0;}
+
+
+.main-tittle, .projects, #exp-top{ border-radius: .5em; }
+
+.main-tittle{ height: 6vh; }
+
+#background{opacity: 0;}
 
 }
