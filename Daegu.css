@@ -5,6 +5,10 @@
   font-family: 'Josefin Slab', serif;
 }
 
+/* Existing CSS styles */
+
+
+
 html,
 body {
   width: 100%;
@@ -158,4 +162,52 @@ section {
   width: 30%;
   height: auto;
   font-family: 'Exo', sans-serif;
+}
+
+@media only screen and (max-width: 768px) {
+  /* Reset styles for smaller screens */
+
+  html, body, main {
+    overflow: auto; /* Enable vertical scrolling */
+    height: auto; /* Remove fixed height */
+    width: auto; /* Allow natural width */
+  }
+
+  .wrap {
+    flex-direction: column; /* Stack children vertically */
+  }
+
+  .section {
+    width: 100vw; /* Full viewport width */
+    left: 0; /* Reset left positioning */
+    position: relative; /* Adjust position if needed */
+    font-size: 3em; /* Adjust font size for readability */
+  }
+
+  .blocks, .block {
+    position: static; /* Reset position */
+    width: 100%; /* Full width */
+    height: auto; /* Adjust height as needed */
+    display: block; /* Stack blocks */
+    pointer-events: auto; /* Enable pointer events */
+  }
+
+  .block__title {
+    transform: rotate(0deg) translate(0); /* Reset rotation */
+    text-align: left; /* Align text to left */
+  }
+
+  #Imagesize, .section img {
+    width: 100%; /* Full width for images */
+    height: auto; /* Adjust height automatically */
+    margin-right: 0; /* Reset margin */
+  }
+
+  #aboutproject {
+    font-size: 1rem; /* Smaller font size for mobile */
+    margin: 20px; /* Adjust margin */
+    width: 100%; /* Full width */
+  }
+
+  
 }

@@ -41,7 +41,7 @@
     <div class="block init" data-block-section="4" data-href="production">
       <div class="block__title">2022-2023</div>
     </div>
-    <div class="block init" data-block-section="5" data-href="journal">
+    <div class="block init" data-block-section="5" data-href="Skills">
       <div class="block__title">Skills</div>
     </div>
   </div>
@@ -52,8 +52,8 @@
     <img src="images/Layer 13.1.png" alt="Rotating Image" id="rotatingImage">
 
     <div class="wrap" data-scroll-section>
-<section class="section journal" data-block-section="1" id="Collection">
-  <img src="images/CitySill_01.gif" alt="image of city silhouette">
+<section class="section journal" data-block-section="1" id="home">
+  <img src="images/CitySill_01.gif" alt="image of city silhouette" id="background">
   <div class="intro-container">
     <div class="profile-image">
       <img src="images/Raksha.png" alt="Raksha Shetty"> <!-- Replace with your image path -->
@@ -74,7 +74,7 @@
 
 
       <section class="section home" data-block-section="2" id="Collection">
-        <img src="images/CitySill_02.gif" alt="image of city silhouette">
+        <img src="images/CitySill_02.gif" alt="image of city silhouette" id="background">
 
         <div class="main-tittle" id="college">
           <span style="color: #000;font-style: italic;color: #a58e1e; font-weight: 700; ">Aug 2011 - June 2016</span>
@@ -154,7 +154,7 @@
 
 
       <section class="section home" data-block-section="3" id="Material">
-        <img src="images/CitySill_03.jpg" alt="image of city silhouette">
+        <img src="images/CitySill_03.jpg" alt="image of city silhouette" id="background">
         <div class="projects" id="exp5">Retail design</div>
         <div class="main-tittle" id="freelance">
           <span style="color: white;font-style: italic;color: #5a3d2d; font-weight: 700; ">Apr 2021 - Sep 2022</span><br>
@@ -195,8 +195,8 @@
       </section>
 
 
-      <section class="section home" data-block-section="4" id="Production">
-        <img src="images/CitySill_04.gif" alt="image of city silhouette">
+      <section class="section home" data-block-section="4" id="production">
+        <img src="images/CitySill_04.gif" alt="image of city silhouette" id="background">
 
         <div class="projects" id="exp10">2nd semester</div>
         <div class="projects" id="exp11">Thesis</div>
@@ -205,7 +205,7 @@
         <div class="list2" id="exp-top"><br>Python<br>*<br>Neurscience<br>*<br>stable-difussion<br></div>
 
         <div id="experience">
-          <img src="Videos/parachute2.gif" alt="image of parachute"  id="pop-first">
+          
         </div>
         <div class="thesis-concept" id="exp-opacity"><img src="images/thesis6.png"></div>
 
@@ -221,7 +221,7 @@
 
 
       <section class="section home" data-block-section="5" id="Skills">
-        <img src="images/CitySill_05.gif" alt="image of city silhouette">
+        <img src="images/CitySill_05.gif" alt="image of city silhouette" id="background">
 
         <div class="skill-container">
 
@@ -402,20 +402,39 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     // Flip skill cards when they are in the center of the viewport
-    skillCards.forEach(card => {
-      const cardRect = card.getBoundingClientRect();
-      const cardCenter = cardRect.left + cardRect.width / 2;
+    const flipCard = (card) => {
+        const innerCard = card.querySelector('.skill-card-inner');
+        if (innerCard.style.transform === 'rotateY(180deg)') {
+            innerCard.style.transform = 'rotateY(0deg)';
+        } else {
+            innerCard.style.transform = 'rotateY(180deg)';
+        }
+    };
 
-      if (Math.abs(viewportCenter - cardCenter) < 100) { // Threshold, adjust as needed
-        card.querySelector('.skill-card-inner').style.transform = 'rotateY(180deg)';
-      } else {
-        card.querySelector('.skill-card-inner').style.transform = 'rotateY(0deg)';
-      }
+    // Add event listeners based on screen size
+    if (window.innerWidth <= 768) { // Assuming 768px as a breakpoint for mobile devices
+        skillCards.forEach(card => {
+            card.addEventListener('touchstart', () => flipCard(card));
+        });
+    } else {
+        skillCards.forEach(card => {
+            const cardRect = card.getBoundingClientRect();
+            window.addEventListener('scroll', () => {
+                const viewportCenter = window.innerWidth / 2;
+                const cardCenter = cardRect.left + cardRect.width / 2;
 
- });
-    });
+                if (Math.abs(viewportCenter - cardCenter) < 100) { 
+                    card.querySelector('.skill-card-inner').style.transform = 'rotateY(180deg)';
+                } else {
+                    card.querySelector('.skill-card-inner').style.transform = 'rotateY(0deg)';
+                }
+            });
+        });
+
+    };
+
   });
-
+   });
 
  
 </script>

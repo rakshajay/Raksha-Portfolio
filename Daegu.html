@@ -51,22 +51,22 @@
     </div>
     <main data-scroll-container>
       <div class="wrap" data-scroll-section> 
-        <section class="section journal" data-block-section="1" id="journal">
+        <section class="section journal" data-block-section="1" id="home">
         <div id="Imagesize"> <img src="images/Daegu2.jpg" alt="Video of project" class="sideimage" > </div>
         <div id="aboutproject">
           <p>"The 'Augmented Cities' design lab, as part of the Daegu Global Studio, explores the transformative role of AI in urban environments. Focusing on Daegu, South Korea, this project envisions the future of city living, work, and socialization through advanced technologies. We investigate specific technological aspects, like pneumatic waste systems, to reimagine future cityscapes and architecture. Each concept will creatively address Daegu's unique history, culture, and challenges. Our insights, set to be published and exhibited in late 2023, aim to influence urban planning in Daegu. This collaborative research, showcasing at an international symposium, has already garnered positive responses, promising inspiring, globally relevant urban solutions.</p><b>Project Team: Soomeen Hahm and Team @ SCI-Arc, California, 2023 </b>"</div>
         </section>
         
-        <section class="section home" data-block-section="2" id="Collection">
+        <section class="section home" data-block-section="2" id="collection">
   <img src="images/Daegu 1.png" alt="Video of project">
 </section>
-        <section class="section home" data-block-section="3" id="Material">
+        <section class="section home" data-block-section="3" id="material">
   <img src="images/Daegu 2.png" alt="Video of project">
 </section>
-        <section class="section home" data-block-section="4" id="Material">
+        <section class="section home" data-block-section="4" id="production">
   <img src="images/Daegu 3.png" alt="Video of project">
 </section>
-<section class="section home" data-block-section="5" id="Home">
+<section class="section home" data-block-section="5" id="journal">
   <img src="images/Daegu 4.png" alt="Video of project">
 </section>
         
@@ -74,13 +74,35 @@
     </main>
   </body>
   <script>
-    const scroll = new LocomotiveScroll({
-      el: document.querySelector("[data-scroll-container]"),
-      smooth: true,
-      direction: "horizontal",
-    });
+    document.addEventListener("DOMContentLoaded", function() {
+  // Initialize Locomotive Scroll
+  const scroll = new LocomotiveScroll({
+    el: document.querySelector("[data-scroll-container]"),
+    smooth: true,
+    direction: "horizontal",
+  });
 
-    let blocks = document.querySelectorAll(".block[data-block-section]");
+    function scrollToSection(href) {
+    const section = document.querySelector(`#${href}`);
+    if (section) {
+      scroll.scrollTo(section, {
+        offset: 0, // You can define an offset here if needed
+        duration: 1500,
+        easing: [0.25, 0.00, 0.35, 1.00]
+      });
+    }
+  }
+
+  // Click event for each block
+  let blocks = document.querySelectorAll(".block[data-block-section]");
+  blocks.forEach((block) => {
+    block.addEventListener('click', function() {
+      const href = this.getAttribute("data-href");
+      scrollToSection(href);
+    });
+  });
+
+   
     scroll.on("scroll", (args) => {
       blocks.forEach((block) => {
         let attr = block.getAttribute("data-block-section");
@@ -112,5 +134,6 @@
         }
       });
     });
+        });
   </script>
 </html>
