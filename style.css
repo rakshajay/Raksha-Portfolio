@@ -5,29 +5,32 @@ body {cursor: url("images/Layer 6 -resized.png"), auto;}
 /*---------STICKY HEADER-----------*/
 
 
-
-
+/* Base styles for desktop */
 .sticky-header {
-    z-index: 1999;
+    z-index: 20;
     display: flex;
     align-items: center;
     position: fixed;
     top: -1%;
     left: 0;
     right: 0;
-    justify-content: space-between; /* Add this for spacing */
+    justify-content: space-between;
+    /* other styles */
+}
+
+.sticky-header .contact-link a:hover {
+    color: #d3d3d3;
 }
 
 .sticky-header .logo {
-    /* Adjust for centering without position absolute */
-    margin: 4px; /* Center logo */
-    width: 280px;
+    margin: 4px;
+    width: 15vw;
     color: var(--white);
     padding: 32px 48px;
 }
 
 .sticky-header .contact-link a {
-    margin-left: auto; /* Push to the right */
+  margin-left: auto; /* Push to the right */
     color: var(--white);
     letter-spacing: .08em;
     text-transform: uppercase;
@@ -38,12 +41,37 @@ body {cursor: url("images/Layer 6 -resized.png"), auto;}
     text-decoration: none;
 }
 
-/* Optional: Style for hover effect on the link */
-.sticky-header .contact-link a:hover {
-    color: #d3d3d3;
+/* Media query for tablets */
+@media (max-width: 768px) {
+    .sticky-header .logo {
+        width: 25vw; /* Adjust logo size */
+        padding: 16px 24px; /* Adjust padding */
+    }
+
+    .sticky-header .contact-link a {
+        padding: 8px 24px; /* Adjust padding */
+        font-size: .7rem; /* Adjust font size */
+    }
 }
 
+/* Media query for mobile devices */
+@media (max-width: 480px) {
+    .sticky-header {
+        flex-direction: column; /* Stack items vertically */
+        padding: 8px 0; /* Adjust overall padding */
+    }
 
+    .sticky-header .logo, 
+    .sticky-header .contact-link {
+        width: 100%; /* Full width */
+        text-align: center; /* Center content */
+    }
+
+    .sticky-header .contact-link a {
+        margin: 0; /* Reset margin */
+        font-size: .6rem; /* Adjust font size */
+    }
+}
 
 
 
@@ -102,14 +130,14 @@ img.backimage {
   position: relative;
   width: 100vw;
   height: 90vh;
-  border-bottom: 1px solid #f5f5f5;
+  border-bottom: 1em solid #f5f5f5;
   overflow: hidden;
 }
 
 
 .intro-image-me{
     position: absolute;
-    height: 340px;
+    height: 30%;
     z-index: 2;
     width: 14vw;
     top: 26vh;
@@ -225,7 +253,7 @@ text-decoration: none;
 .intro-image-AR{
     position: absolute;
     width: 11vw;  
-    height: 330px;
+    height: 35%;
     top: 19vh;   
     left: 3vw;
     z-index: 2;
@@ -299,7 +327,7 @@ text-decoration: none;
 .intro-image-archi{
     position: absolute;
     width: 14.5vw; 
-    height:400px;
+    height:40%;
     top: 6vh;    
     left: 22vw;
     z-index: 1;
@@ -365,7 +393,7 @@ text-decoration: none;
     width: 18.5vw;
     top: 26vw;
     left: 15vw;
-    height: 250px;
+    height: 20vh;
 }
 
 .intro-image-web {

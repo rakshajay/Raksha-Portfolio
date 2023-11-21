@@ -626,7 +626,7 @@ h1 {
    left: 10%;
   top:80%;
 }
-.thesis-concept{opacity: 1;left:48%;bottom: 30%;}
+.thesis-concept{opacity: 1;left:48%;bottom: 30%;border: 2px solid #a74e24;}
 .terra-certi{opacity: 1;left:58%;bottom: 5%;}
 
 .skill-container{
