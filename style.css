@@ -137,7 +137,7 @@ img.backimage {
 
 .intro-image-me{
     position: absolute;
-    height: 30%;
+    height: 16vw;
     z-index: 2;
     width: 14vw;
     top: 26vh;
@@ -166,7 +166,7 @@ img.backimage {
     justify-content: center;
     color: black; /* Text color */
     text-transform: uppercase;
-    font-size: .8125rem;
+    font-size: .8vw;
     font-weight: 700;
 text-decoration: none;
 }
@@ -200,11 +200,11 @@ text-decoration: none;
 }
 
 .intro-image-me:hover #line1 {
-    transform: translateY(-120px); /* Move line 1 up */
+    transform: translateY(-40%); /* Move line 1 up */
 }
 
 .intro-image-me:hover #line2 {
-    transform: translateY(120px); /* Move line 2 down */
+    transform: translateY(40%); /* Move line 2 down */
 }
 
 
@@ -254,7 +254,7 @@ text-decoration: none;
 .intro-image-AR{
     position: absolute;
     width: 11vw;  
-    height: 35%;
+    height: 16vw;
     top: 19vh;   
     left: 3vw;
     z-index: 2;
@@ -271,11 +271,11 @@ text-decoration: none;
 }
 
 .intro-image-AR:hover #line1 {
-    transform: translateY(-100px); /* Move line 1 up */
+    transform: translateY(-40%); /* Move line 1 up */
 }
 
 .intro-image-AR:hover #line2 {
-    transform: translateY(100px); /* Move line 2 down */
+    transform: translateY(40%); /* Move line 2 down */
 }
 
 
@@ -328,7 +328,7 @@ text-decoration: none;
 .intro-image-archi{
     position: absolute;
     width: 14.5vw; 
-    height:40%;
+    height:20vw;
     top: 6vh;    
     left: 22vw;
     z-index: 1;
@@ -344,11 +344,11 @@ text-decoration: none;
 }
 
 .intro-image-archi:hover #line1 {
-    transform: translateY(-100px); /* Move line 1 up */
+    transform: translateY(-40%); /* Move line 1 up */
 }
 
 .intro-image-archi:hover #line2 {
-    transform: translateY(100px); /* Move line 2 down */
+    transform: translateY(40%); /* Move line 2 down */
 }
 
 
@@ -394,7 +394,7 @@ text-decoration: none;
     width: 18.5vw;
     top: 26vw;
     left: 15vw;
-    height: 26vh;
+    height: 14vw;
 }
 
 .intro-image-web {
@@ -407,11 +407,11 @@ text-decoration: none;
 }
 
 .intro-image-web:hover #line1 {
-    transform: translateY(-100px); /* Move line 1 up */
+    transform: translateY(-40%); /* Move line 1 up */
 }
 
 .intro-image-web:hover #line2 {
-    transform: translateY(100px); /* Move line 2 down */
+    transform: translateY(40%); /* Move line 2 down */
 }
 
 
@@ -453,12 +453,12 @@ text-decoration: none;
 
 .intro-image-AW{
     position: absolute;
-    height: 280px;
+    height: 14vw;
     z-index: 1;
     width: 25vw;
     top: 50vh;
     left: auto;
-    right: 19vw;
+    right: 19%;
 }
 
 .intro-image-AW {
@@ -471,11 +471,11 @@ text-decoration: none;
 }
 
 .intro-image-AW:hover #line1 {
-    transform: translateY(-100px); /* Move line 1 up */
+    transform: translateY(-40%); /* Move line 1 up */
 }
 
 .intro-image-AW:hover #line2 {
-    transform: translateY(100px); /* Move line 2 down */
+    transform: translateY(40%); /* Move line 2 down */
 }
 
 
@@ -517,32 +517,27 @@ text-decoration: none;
     width: 17vw;
     top: 4vh;
     left: 48vw;
-    height: 460px;
+    
     z-index: 1;
-    right: 15vw;
+    flex-wrap: wrap;
     border: 1px solid rgba(255,255,255,.12);
     box-shadow: -2px 2px 4px rgba(0,0,0,.1), -1px 1px 6px rgba(0,0,0,.1), -3px 3px 6px rgba(0,0,0,.1);
 }
 
 .intro-image-text p {
   font-family: 'Josefin Slab', serif;
-  margin: 40px;
+  margin: 14%;
   color: #3b362e; /* Assuming you want the text color to be white */
   text-align: center; /* If you want the text to be centered */
   font-weight: 700;
-  font-size: 1.5rem;
+   font-size: 1.2vw;
 }
 
-.intro-image-text em{
-  color: #fff0da;
-  font-style: italic;
-  font-size: 1.2rem;
-}
 
-.all-caps{
+#ready{
   font-style: italic;
   color: #fff0da;
-  font-size: 1rem;
+  font-size: 1vw;
 
 }
 /*.............LAYERS OF PORTIONS - COOKING..........*/
@@ -562,8 +557,8 @@ text-decoration: none;
     width: 16.5vw;
     top: 7vh;
     left: auto;
-    right: 96px;
-    height: 250px;
+    right: 6%;
+    height: 12vw;
     z-index: 1;
    
 }
@@ -578,11 +573,11 @@ text-decoration: none;
 }
 
 .intro-image-cook:hover #line1 {
-    transform: translateY(-100px); /* Move line 1 up */
+    transform: translateY(-40%); /* Move line 1 up */
 }
 
 .intro-image-cook:hover #line2 {
-    transform: translateY(100px); /* Move line 2 down */
+    transform: translateY(40%); /* Move line 2 down */
 }
 
 
@@ -630,7 +625,7 @@ text-decoration: none;
     left: auto;
     right: 21vw;
     width: 12.5vw;
-    height: 350px;
+    height: 20vw;
     z-index: 1;
     
    
@@ -647,11 +642,11 @@ text-decoration: none;
 }
 
 .intro-image-AI:hover #line1 {
-    transform: translateY(-100px); /* Move line 1 up */
+    transform: translateY(-40%); /* Move line 1 up */
 }
 
 .intro-image-AI:hover #line2 {
-    transform: translateY(100px); /* Move line 2 down */
+    transform: translateY(40%); /* Move line 2 down */
 }
 
 
@@ -694,7 +689,7 @@ text-decoration: none;
     width: 11vw;
     top: 30vh;
     left: auto;
-    height: 350px;
+    height: 18vw;
     z-index: 1;
     right: 7vw;
     border: 1px solid rgba(255,255,255,.12);
@@ -703,77 +698,23 @@ text-decoration: none;
 
 .intro-image-game p {
   font-family: 'Josefin Slab', serif;
-  margin: 40px;
+  margin: 14%;
   color: #5b5674; /* Assuming you want the text color to be white */
   text-align: center; /* If you want the text to be centered */
-  font-weight: 700;
-  font-size: 1.5rem;
+  
+  font-size: 1.2vw;
 }
 
 .intro-image-game em{
   color: #5b5674;
   font-style: italic;
-  font-size: 1.2rem;
+  font-size: 1vw;
 }
 
 .all-caps{
   font-style: italic;
   color: #fff0da;
-  font-size: 1rem;
-
-}
-/*.............LAYERS OF PORTIONS - COOKING..........*/
-
-.cookImage {
-    position: absolute;
-    width: 100%;  
-    height: 100%;
-    border: 1px solid rgba(255,255,255,.12);
-    box-shadow: -2px 2px 4px rgba(0,0,0,.1), -1px 1px 6px rgba(0,0,0,.1), -3px 3px 6px rgba(0,0,0,.1);
-    
-}
-
-
-.intro-image-cook{
-    position: absolute;
-    width: 16.5vw;
-    top: 7vh;
-    left: auto;
-    right: 96px;
-    height: 250px;
-    z-index: 1;
-   
-}
-
-.intro-image-cook {
-    cursor: pointer;
-}
-/* Text hover animations */
-.intro-image-cook:hover .resume-overlay {
-    opacity: 1; /* Show the text */
-    transition: opacity 1.6s ease;
-}
-
-.intro-image-cook:hover #line1 {
-    transform: translateY(-100px); /* Move line 1 up */
-}
-
-.intro-image-cook:hover #line2 {
-    transform: translateY(100px); /* Move line 2 down */
-}
-
-
-
-.intro-image-cook:hover .cookImage {
-    opacity: 0; /* Hide the image */
-    transition: background .8s ease;
-}
-
-
-.intro-image-cook:hover + .background-flash-cook {
-    opacity: 1;
-    transition-delay: 0s; /* Reset the delay for visibility when showing */
-
+  font-size: 1vw;
 
 }
 
