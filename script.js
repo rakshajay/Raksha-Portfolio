@@ -43,45 +43,6 @@ function drag(event) {
 }
 
 
-// -------------------------------------------------------------//
-
-
-//gear-Backgroundcolor change//
-
-
-
-
-//let gear1 = document.getElementById('gear1');
-//let gear2 = document.getElementById('gear2');
-//let body = document.body;
-
-//gear1.addEventListener('mouseover', function() {
- //   body.style.backgroundColor = '#8f9e92';
-//});
-
-//gear1.addEventListener('mouseout', function() {
-  //  body.style.backgroundColor = ''; // This will reset the background color to its original state
-//});
-
-//gear2.addEventListener('mouseover', function() {
-  //  body.style.backgroundColor = '#c8b1b1';
-//});
-
-//gear2.addEventListener('mouseout', function() {
-   // body.style.backgroundColor = ''; // This will reset the background color to its original state
-//});
-
-
-// Get the gear image element
-//..const gearImage = document.querySelector(".Gear_Img");
-
-// Add a listener for the "transitionend" event to detect when the rotation animation ends
-//gearImage.addEventListener("transitionend", function() {
-    // Redirect to the portfolio link after the animation is complete
-    //window.location.href = "https:.com/rakshashetty5/docs/combinepdf_9_";
-//});
-//
-
 
 //.......ANGRY BIRD..........//
 const angryImage = document.querySelector('.Angry_Sphere');
@@ -124,150 +85,42 @@ angryImage.addEventListener('click', () => {
 
 // SHOW THE IMAGE ON HOVER IN INTRO//
 
-document.querySelector('.intro-image-me').addEventListener('mouseenter', function() {
-    
-    document.querySelector('.background-flash-me').style.opacity = 1;
-     
-      // Select all the elements you want to change and set their opacity to 0
-     document.querySelectorAll('.intro-image-AR, .intro-image-archi, .intro-image-AI , .intro-image-AW, .intro-image-text, .intro-image-cook, .intro-image-web, .intro-image-game').forEach(function(el) {
+// Function to handle mouse enter event
+function handleMouseEnter(selector, backgroundSelector) {
+    document.querySelector(backgroundSelector).style.opacity = 1;
+    document.querySelectorAll(selector).forEach(function(el) {
         el.style.opacity = 0;
     });
-});
+}
 
-document.querySelector('.intro-image-me').addEventListener('mouseleave', function() {
-    
-    document.querySelector('.background-flash-me').style.opacity = 0;
-
-    // Select all the elements and reset their opacity to the original value
-    document.querySelectorAll('.intro-image-AR, .intro-image-archi, .intro-image-AI,.intro-image-AW, .intro-image-text, .intro-image-cook, .intro-image-web, .intro-image-game' ).forEach(function(el) {
+// Function to handle mouse leave event
+function handleMouseLeave(selector, backgroundSelector) {
+    document.querySelector(backgroundSelector).style.opacity = 0;
+    document.querySelectorAll(selector).forEach(function(el) {
         el.style.opacity = '';
     });
-});
+}
 
+// Define an array of intro image class suffixes
+const introImageClasses = ['me', 'AR', 'archi', 'AI', 'AW', 'cook', 'web', 'game','text'];
 
+// Attach event listeners
+introImageClasses.forEach(function(classSuffix) {
+    const introSelector = `.intro-image-${classSuffix}`;
+    const backgroundSelector = `.background-flash-${classSuffix}`;
+    const otherSelectors = introImageClasses
+                            .filter(suffix => suffix !== classSuffix)
+                            .map(suffix => `.intro-image-${suffix}`)
+                            .join(', ');
 
+    document.querySelector(introSelector).addEventListener('mouseenter', function() {
+        handleMouseEnter(otherSelectors, backgroundSelector);
+    });
 
-
-document.querySelector('.intro-image-AR').addEventListener('mouseenter', function() {
-    
-    document.querySelector('.background-flash-AR').style.opacity = 1;
-
-     document.querySelectorAll('.intro-image-me, .intro-image-archi, .intro-image-AI , .intro-image-AW, .intro-image-text, .intro-image-cook, .intro-image-web, .intro-image-game').forEach(function(el) {
-        el.style.opacity = 0;
+    document.querySelector(introSelector).addEventListener('mouseleave', function() {
+        handleMouseLeave(otherSelectors, backgroundSelector);
     });
 });
-
-document.querySelector('.intro-image-AR').addEventListener('mouseleave', function() {
-    
-    document.querySelector('.background-flash-AR').style.opacity = 0;
-
-    document.querySelectorAll('.intro-image-me, .intro-image-archi, .intro-image-AI,.intro-image-AW, .intro-image-text, .intro-image-cook, .intro-image-web, .intro-image-game' ).forEach(function(el) {
-        el.style.opacity = '';
-    });
-});
-
-
-
-
-document.querySelector('.intro-image-archi').addEventListener('mouseenter', function() {
-    
-    document.querySelector('.background-flash-archi').style.opacity = 1;
-
-    document.querySelectorAll('.intro-image-me, .intro-image-AR, .intro-image-AI , .intro-image-AW, .intro-image-text, .intro-image-cook, .intro-image-web, .intro-image-game').forEach(function(el) {
-        el.style.opacity = 0;
-    });
-});
-
-document.querySelector('.intro-image-archi').addEventListener('mouseleave', function() {
-    
-    document.querySelector('.background-flash-archi').style.opacity = 0;
-
-    document.querySelectorAll('.intro-image-AR, .intro-image-me, .intro-image-AI,.intro-image-AW, .intro-image-text, .intro-image-cook, .intro-image-web, .intro-image-game' ).forEach(function(el) {
-        el.style.opacity = '';
-    });
-});
-
-
-
-document.querySelector('.intro-image-AI').addEventListener('mouseenter', function() {
-    
-    document.querySelector('.background-flash-AI').style.opacity = 1;
-
-    document.querySelectorAll('.intro-image-me, .intro-image-archi, .intro-image-AR , .intro-image-AW, .intro-image-text, .intro-image-cook, .intro-image-web, .intro-image-game').forEach(function(el) {
-        el.style.opacity = 0;
-    });
-});
-
-document.querySelector('.intro-image-AI').addEventListener('mouseleave', function() {
-    
-    document.querySelector('.background-flash-AI').style.opacity = 0;
-
-    document.querySelectorAll('.intro-image-AR, .intro-image-archi, .intro-image-me,.intro-image-AW, .intro-image-text, .intro-image-cook, .intro-image-web, .intro-image-game' ).forEach(function(el) {
-        el.style.opacity = '';
-    });
-});
-
-
-
-
-document.querySelector('.intro-image-AW').addEventListener('mouseenter', function() {
-    
-    document.querySelector('.background-flash-AW').style.opacity = 1;
-
-    document.querySelectorAll('.intro-image-me, .intro-image-archi, .intro-image-AI , .intro-image-AR, .intro-image-text, .intro-image-cook, .intro-image-web, .intro-image-game').forEach(function(el) {
-        el.style.opacity = 0;
-    });
-});
-
-document.querySelector('.intro-image-AW').addEventListener('mouseleave', function() {
-    
-    document.querySelector('.background-flash-AW').style.opacity = 0;
-
-    document.querySelectorAll('.intro-image-AR, .intro-image-archi, .intro-image-AI,.intro-image-me, .intro-image-text, .intro-image-cook, .intro-image-web, .intro-image-game' ).forEach(function(el) {
-        el.style.opacity = '';
-    });
-});
-
-
-
-document.querySelector('.intro-image-cook').addEventListener('mouseenter', function() {
-    
-    document.querySelector('.background-flash-cook').style.opacity = 1;
-
-    document.querySelectorAll('.intro-image-me, .intro-image-archi, .intro-image-AI , .intro-image-AW, .intro-image-text, .intro-image-AR, .intro-image-web, .intro-image-game').forEach(function(el) {
-        el.style.opacity = 0;
-    });
-});
-
-document.querySelector('.intro-image-cook').addEventListener('mouseleave', function() {
-    
-    document.querySelector('.background-flash-cook').style.opacity = 0;
-
-    document.querySelectorAll('.intro-image-AR, .intro-image-archi, .intro-image-AI,.intro-image-AW, .intro-image-text, .intro-image-me, .intro-image-web, .intro-image-game' ).forEach(function(el) {
-        el.style.opacity = '';
-    });
-});
-
-
-
-document.querySelector('.intro-image-web').addEventListener('mouseenter', function() {
-    
-    document.querySelector('.background-flash-web').style.opacity = 1;
-
-    document.querySelectorAll('.intro-image-me, .intro-image-archi, .intro-image-AI , .intro-image-AW, .intro-image-text, .intro-image-cook, .intro-image-AR, .intro-image-game').forEach(function(el) {
-        el.style.opacity = 0;
-    });
-});
-
-document.querySelector('.intro-image-web').addEventListener('mouseleave', function() {
-    
-    document.querySelector('.background-flash-web').style.opacity = 0;
-
-    document.querySelectorAll('.intro-image-AR, .intro-image-archi, .intro-image-AI,.intro-image-AW, .intro-image-text, .intro-image-cook, .intro-image-me, .intro-image-game' ).forEach(function(el) {
-        el.style.opacity = '';
-    });
-});
-
 
 
 
@@ -284,32 +137,27 @@ document.addEventListener("scroll", function() {
 //.......SCROLL TO PARTICULAR SECTION..........//
 
 
-document.querySelector('.intro-image-archi').addEventListener('click', function() {
-    document.querySelector('#ArchiSection').scrollIntoView({ 
-        behavior: 'smooth' 
+// Function to add click event listener to an element
+function addClickListener(selector, targetId) {
+    document.querySelector(selector).addEventListener('click', function() {
+        document.querySelector(targetId).scrollIntoView({ 
+            behavior: 'smooth' 
+        });
     });
+}
+
+// Array of objects mapping intro image classes to section IDs
+const mappings = [
+    { classSuffix: 'archi', sectionId: '#ArchiSection' },
+    { classSuffix: 'AR', sectionId: '#ARSection' },
+    { classSuffix: 'AI', sectionId: '#AISection' },
+    { classSuffix: 'AW', sectionId: '#ArtSection' }
+];
+
+// Attach event listeners
+mappings.forEach(function(mapping) {
+    addClickListener(`.intro-image-${mapping.classSuffix}`, mapping.sectionId);
 });
-
-
-document.querySelector('.intro-image-AR').addEventListener('click', function() {
-    document.querySelector('#ARSection').scrollIntoView({ 
-        behavior: 'smooth' 
-    });
-});
-
-document.querySelector('.intro-image-AI').addEventListener('click', function() {
-    document.querySelector('#AISection').scrollIntoView({ 
-        behavior: 'smooth' 
-    });
-});
-
-
-document.querySelector('.intro-image-AW').addEventListener('click', function() {
-    document.querySelector('#ArtSection').scrollIntoView({ 
-        behavior: 'smooth' 
-    });
-});
-
 
 
 //.....IMAGE SLIDER.............//
