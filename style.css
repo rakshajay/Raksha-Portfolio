@@ -471,7 +471,7 @@ text-decoration: none;
 }
 
 .intro-image-AW:hover #line1 {
-    transform: translateY(-40%); /* Move line 1 up */
+    transform: translateY(-20%); /* Move line 1 up */
 }
 
 .intro-image-AW:hover #line2 {
