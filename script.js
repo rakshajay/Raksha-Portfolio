@@ -148,7 +148,7 @@ function addClickListener(selector, targetId) {
 
 // Array of objects mapping intro image classes to section IDs
 const mappings = [
-    { classSuffix: 'archi', sectionId: '#ArchiSection' },
+    
     { classSuffix: 'AR', sectionId: '#ARSection' },
     { classSuffix: 'AI', sectionId: '#AISection' },
     { classSuffix: 'AW', sectionId: '#ArtSection' }
