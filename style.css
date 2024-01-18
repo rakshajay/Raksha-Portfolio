@@ -15,23 +15,6 @@ body {cursor: url("images/Layer 6 -resized.png"), auto;}
     left: 0;
     right: 0;
     justify-content: space-between;
-    /* other styles */
-}
-
-.sticky-header .contact-link a:hover {
-    color: #d3d3d3;
-}
-
-.sticky-header .logo {
-    margin: 4px;
-    width: 10vw;
-    color: var(--white);
-    padding: 32px 48px;
-}
-
-.sticky-header .contact-link a {
-  margin-left: auto; /* Push to the right */
-    color: var(--white);
     letter-spacing: .08em;
     text-transform: uppercase;
     padding: 16px 48px;
@@ -39,6 +22,26 @@ body {cursor: url("images/Layer 6 -resized.png"), auto;}
     font-weight: 700;
     line-height: 1.3em;
     text-decoration: none;
+}
+
+.contact-link a:hover {
+    color: #d3d3d3;
+}
+
+.logo a:hover {
+    color: #d3d3d3;
+}
+.sticky-header .logo {
+    margin: 2px;
+    color: var(--white);
+    padding: 22px 12px;
+
+}
+
+.sticky-header .contact-link, a {
+  margin-left: auto; 
+    color: var(--white);
+    letter-spacing: .08em;
 }
 
 /* Media query for tablets */
