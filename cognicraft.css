@@ -2,7 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Josefin Slab', serif;
+  font-family: 'Arimo', sans-serif;
 }
 
 html,
@@ -133,7 +133,7 @@ section {
 .block__number,
 .block__title {
   text-transform: uppercase;
-  font-size: 2rem;
+  font-size: 1.4rem;
   line-height: 1.06rem;
   color: #000;
 }
@@ -141,7 +141,7 @@ section {
 .image-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Adjust '200px' to your preference */
-  gap: 10px; /* Space between images */
+  gap: 10px; 
 }
 
 .image-grid img {
@@ -154,11 +154,11 @@ section {
 
 
 #Imagesize{
- width: 40%; /* Adjust the width of the image */
+ width: 45%; 
     height: auto;
     object-fit: contain;
-    overflow: hidden; /* Hide the parts of the image that overflow the container */
-    margin-right: 60px;
+    overflow: hidden; 
+    margin-right: 30px;
     
 }
 
@@ -168,11 +168,11 @@ section {
 }
 
 #aboutproject{
-  line-height: 3rem;
-  font-size: 1.8rem;
-  margin-right : 180px;
-  width: 40%;
+  line-height: 2rem;
+  font-size: 1.1rem;
+  margin-right : 140px;
+  width: 30%;
   height: auto;
-  font-family: 'Exo', sans-serif;
+  
   color:#503d36;
 }

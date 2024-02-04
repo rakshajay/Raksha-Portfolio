@@ -2,7 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Josefin Slab', serif;
+  font-family: 'Arimo', sans-serif;
 }
 
 html,
@@ -133,7 +133,7 @@ section {
 .block__number,
 .block__title {
   text-transform: uppercase;
-  font-size: 2rem;
+  font-size: 1.4rem;
   line-height: 1.06rem;
   color: #000;
 }
@@ -164,11 +164,11 @@ section {
 
 
 #aboutproject{
-  line-height: 3rem;
-  font-size: 1.8rem;
+  line-height: 2rem;
+  font-size: 1.2rem;
   margin-right : 180px;
   width: 40%;
   height: auto;
-  font-family: 'Exo', sans-serif;
+  
   color:#503d36;
 }

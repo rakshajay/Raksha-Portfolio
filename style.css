@@ -1,7 +1,4 @@
 
-body {cursor: url("images/Layer 6 -resized.png"), auto;}
-
-
 /*---------STICKY HEADER-----------*/
 
 
@@ -87,18 +84,7 @@ img {
   object-fit: cover;
 }
 
-.gear {
-    position: absolute;
-    width: 100px;  
-    height: 100px;
-    transition: opacity 0.3s ease;
-    animation: spin 4s linear infinite;
-}
 
-@keyframes spin {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
-}
 
 /*------------- INTRO PAGE RECTANGLES---------------- */ 
 
@@ -752,10 +738,10 @@ text-decoration: none;
 
 .Inner_text {
   z-index: 2;
-  color: #000000;
+  color: #f0e3dd;
   letter-spacing: -.03em;
-  font-family: 'Josefin Slab', serif;
-  font-size: 8.5vw;
+  
+  font-size: 7.5vw;
   font-weight: 300;
   line-height: 1.2em;
   display: inline-block;
@@ -813,7 +799,7 @@ text-decoration: none;
   top: -35%;
   bottom: auto;
   left:10px;
-  max-width: 400px;
+  max-width: 320px;
 
 }
 
@@ -833,7 +819,7 @@ text-decoration: none;
 }
 
 #Marvanthe{
-  left: 520px;
+  left: 400px;
 }
 
 #Assetz{
