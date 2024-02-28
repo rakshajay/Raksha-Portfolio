@@ -100,7 +100,8 @@ function handleMouseLeave(selector, backgroundSelector) {
         el.style.opacity = '';
     });
 }
-
+const delayTime = 3000;
+setTimeout(() => {
 // Define an array of intro image class suffixes
 const introImageClasses = ['me', 'AR', 'archi', 'AI', 'AW', 'cook', 'web', 'game','text'];
 
@@ -121,6 +122,7 @@ introImageClasses.forEach(function(classSuffix) {
         handleMouseLeave(otherSelectors, backgroundSelector);
     });
 });
+}, delayTime);
 
 
 
