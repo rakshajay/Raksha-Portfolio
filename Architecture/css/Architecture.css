@@ -367,13 +367,12 @@ h2 {
 	padding-top: 12rem;
 	font-size: 1.0rem;
 	line-height: 150%;
-	text-align: center;
-}
+	
+	padding-left: 9rem;
+	
+}  
 
-. col-md-7 offset-md-1 col-sm-12
-{
-	padding: 10px;
-}
+
 
 
 .bg-black {
