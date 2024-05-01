@@ -6,7 +6,7 @@
 /* Basic */
 
 body {
-	background-color: #ebeae9;
+	background-color: #ffff;
 }
 
 html {
@@ -84,7 +84,7 @@ h2 {
 .navbar {
 	width: 100%;
 	z-index: 99;
-	top: 15px;
+	top: 5px;
 	padding: 0;
 }
 
@@ -365,9 +365,16 @@ h2 {
 
 .portfolio-text {
 	padding-top: 12rem;
-	font-size: 1.5rem;
-	line-height: 125%;
+	font-size: 1.0rem;
+	line-height: 150%;
+	text-align: center;
 }
+
+. col-md-7 offset-md-1 col-sm-12
+{
+	padding: 10px;
+}
+
 
 .bg-black {
 	background-color: #000!important;
